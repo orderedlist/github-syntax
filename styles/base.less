@@ -1,0 +1,146 @@
+@import "ui-variables";
+@import "colors";
+
+.editor-colors, :host {
+  background-color: @base03;
+  color: @base0;
+}
+
+.editor, :host {
+  .invisible-character,
+  .indent-guide {
+    color: @base01;
+  }
+
+  .gutter {
+    background-color: @base03;
+    border-right: 1px @base02 solid;
+  }
+
+  .gutter .line-number {
+    opacity: 0.4;
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @base1;
+  }
+
+  .cursor {
+    border-color: @base0;
+  }
+
+  .selection .region {
+    background-color: @selection;
+    color: @base1;
+  }
+
+  .cursor-line {
+    background-color:fade(@active, 50%);
+  }
+
+  .line-number.cursor-line-no-selection {
+    background-color: @active;
+    opacity:1;
+  }
+}
+
+.bracket-matcher {
+  background-color: @base1;
+  opacity: 0.7;
+}
+
+.comment {
+  color: @gray !important;
+  font-style: italic;
+}
+
+.punctuation {
+  color: @black;
+  font-weight: bold;
+
+  &.separator {
+    font-weight: normal;
+  }
+}
+
+.entity {
+  color: @magenta;
+  font-weight: bold;
+
+  &.class {
+    color: @blue;
+  }
+
+  &.inherited-class {
+    color: @cyan;
+    font-weight: normal;
+  }
+}
+
+.support.class {
+  color: @cyan;
+  font-weight: normal;
+}
+
+.keyword {
+  color: @black;
+  font-weight: bold;
+}
+
+.storage.type {
+  color: @green;
+}
+
+.constant {
+  color: @violet;
+
+  &.numeric,
+  &.boolean {
+    color: @black;
+    font-weight: bold;
+  }
+}
+
+.variable {
+  color: @cyan;
+
+  &.parameter {
+    color: @black;
+  }
+}
+
+.delimiter, .brace {
+  color: @black;
+}
+
+.delimiter.period {
+  color: @black;
+}
+
+.invalid.deprecated {
+  text-decoration: underline;
+  color: @red;
+}
+
+.invalid.illegal {
+  color: @red;
+}
+
+.string {
+  color: @red;
+
+  .constant.character.escape {
+    color: @red;
+  }
+
+  &.regexp {
+    color: @green;
+
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repitition {
+      color: @green;
+    }
+  }
+}

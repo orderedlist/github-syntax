@@ -1,0 +1,11 @@
+{
+  "name": "github-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "An Atom syntax theme matching GitHub highlighting",
+  "repository": "https://github.com/orderedist/github-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
