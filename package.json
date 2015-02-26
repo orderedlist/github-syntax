@@ -1,7 +1,7 @@
 {
   "name": "github-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An Atom syntax theme matching GitHub highlighting",
   "repository": "https://github.com/orderedlist/github-syntax",
   "license": "MIT",
