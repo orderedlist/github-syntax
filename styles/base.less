@@ -1,53 +1,53 @@
-@import "ui-variables";
 @import "colors";
+@import "syntax-variables";
 
 .editor-colors, :host {
-  background-color: @base03;
-  color: @base0;
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
 }
 
 .editor, :host {
   .invisible-character,
   .indent-guide {
-    color: @base01;
+    color: @syntax-invisible-character-color;
   }
 
   .gutter {
-    background-color: @base03;
+    background-color: @syntax-gutter-background-color;
   }
 
   .gutter .line-number {
-    opacity: 0.2;
-    background:@base02;
+    background:@syntax-gutter-background-color;
   }
 
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @base1;
+    color: @syntax-gutter-text-color;
   }
 
   .cursor {
-    border-color: @base0;
+    border-color: @syntax-cursor-color;
   }
 
   .selection .region {
-    background-color: @selection;
-    color: @base1;
+    background-color: @syntax-selection-color;
+    color: @syntax-text-color;
   }
 
   .cursor-line {
-    background-color:fade(@active, 50%);
+    background-color:@syntax-cursor-line;
   }
 
   .line-number.cursor-line-no-selection {
-    background-color: @active;
+    background-color: @syntax-gutter-background-color-selected;
+    color:@syntax-gutter-text-color-selected;
     opacity:1;
   }
 }
 
 .bracket-matcher {
-  background-color: @base1;
+  background-color: @syntax-indent-guide-color;
   opacity: 0.7;
 }
 
