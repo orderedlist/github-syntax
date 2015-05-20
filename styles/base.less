@@ -1,146 +1,213 @@
-@import "colors";
 @import "syntax-variables";
 
-.editor-colors, :host {
+.editor {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 }
 
-.editor, :host {
-  .invisible-character,
-  .indent-guide {
-    color: @syntax-invisible-character-color;
-  }
-
-  .gutter {
-    background-color: @syntax-gutter-background-color;
-  }
-
-  .gutter .line-number {
-    background:@syntax-gutter-background-color;
-  }
-
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @syntax-gutter-text-color;
-  }
-
-  .cursor {
-    border-color: @syntax-cursor-color;
-  }
-
-  .selection .region {
-    background-color: @syntax-selection-color;
-    color: @syntax-text-color;
-  }
-
-  .cursor-line {
-    background-color:@syntax-cursor-line;
-  }
-
-  .line-number.cursor-line-no-selection {
-    background-color: @syntax-gutter-background-color-selected;
-    color:@syntax-gutter-text-color-selected;
-    opacity:1;
-  }
+.editor .gutter {
+  background-color: @syntax-gutter-background-color;
+  color: @syntax-gutter-text-color;
 }
 
-.bracket-matcher {
-  background-color: @syntax-indent-guide-color;
-  opacity: 0.7;
+.editor .gutter .line-number.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+}
+
+.editor .gutter .line-number.cursor-line-no-selection {
+  color: @syntax-gutter-text-color-selected;
+}
+
+.editor .wrap-guide {
+  color: @syntax-wrap-guide-color;
+}
+
+.editor .indent-guide {
+  color: @syntax-indent-guide-color;
+}
+
+.editor .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+.editor .search-results .marker .region {
+  background-color: transparent;
+  border: @syntax-result-marker-color;
+}
+
+.editor .search-results .marker.current-result .region {
+  border: @syntax-result-marker-color-selected;
+}
+
+.editor.is-focused .cursor {
+  border-color: @syntax-cursor-color;
+}
+
+.editor.is-focused .selection .region {
+  background-color: @syntax-selection-color;
+}
+
+.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
+  background-color: fade(#F8EEC7, 40%);
 }
 
 .comment {
-  color: @gray !important;
-  font-style: italic;
+  color: #969896;
 }
 
-.punctuation {
-  color: @black;
-  font-weight: bold;
-
-  &.separator {
-    font-weight: normal;
-  }
+.constant, .variable.other.constant {
+  color: #0086b3;
 }
 
-.entity {
-  color: @magenta;
-  font-weight: bold;
-
-  &.class {
-    color: @blue;
-  }
-
-  &.inherited-class {
-    color: @cyan;
-    font-weight: normal;
-  }
+.keyword.operator.symbole, .keyword.other.mark {
 }
 
-.support.class {
-  color: @cyan;
-  font-weight: normal;
+.entity, .entity.name {
+  color: #795da3;
+}
+
+.variable.parameter.function {
+  color: #333;
+}
+
+.entity.name.tag {
+  color: #63a35c;
 }
 
 .keyword {
-  color: @black;
-  font-weight: bold;
+  color: #a71d5d;
 }
 
-.storage.type {
-  color: @green;
+.storage, .storage.type {
+  color: #a71d5d;
 }
 
-.constant {
-  color: @violet;
+.storage.modifier.package, .storage.modifier.import, .storage.type.java {
+  color: #333;
+}
 
-  &.numeric,
-  &.boolean {
-    color: @black;
-    font-weight: bold;
-  }
+.string, .punctuation.definition.string, .string .punctuation.section.embedded .source {
+  color: #183691;
+}
+
+.string.unquoted.import.ada {
+}
+
+.support {
+  color: #0086b3;
+}
+
+.meta.property-name {
+  color: #0086b3;
 }
 
 .variable {
-  color: @cyan;
-
-  &.parameter {
-    color: @black;
-  }
+  color: #ed6a43;
 }
 
-.delimiter, .brace {
-  color: @black;
-}
-
-.delimiter.period {
-  color: @black;
+.variable.other {
+  color: #333;
 }
 
 .invalid.deprecated {
+  font-weight: bold;
+  font-style: italic;
   text-decoration: underline;
-  color: @red;
+  color: #b52a1d;
 }
 
 .invalid.illegal {
-  color: @red;
+  font-style: italic;
+  text-decoration: underline;
+  color: #f8f8f8;
+  background-color: #b52a1d;
 }
 
-.string {
-  color: @red;
+.string .source {
+  color: #333;
+}
 
-  .constant.character.escape {
-    color: @red;
-  }
+.string .variable {
+  color: #0086b3;
+}
 
-  &.regexp {
-    color: @green;
+.string.regexp {
+  color: #183691;
+}
 
-    .source.ruby.embedded,
-    .string.regexp.arbitrary-repitition {
-      color: @green;
-    }
-  }
+.string.regexp.character-class, .string.regexp .constant.character.escape, .string.regexp .source.ruby.embedded, .string.regexp .string.regexp.arbitrary-repitition {
+  color: #183691;
+}
+
+.string.regexp .constant.character.escape {
+  font-weight: bold;
+  color: #63a35c;
+}
+
+.support.constant {
+  color: #0086b3;
+}
+
+.support.variable {
+  color: #0086b3;
+}
+
+.meta.module-reference {
+  color: #0086b3;
+}
+
+.markup.list {
+  color: #693a17;
+}
+
+.markup.heading, .markup.heading .entity.name {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.markup.quote {
+  color: #008080;
+}
+
+.markup.italic {
+  font-style: italic;
+  color: #333;
+}
+
+.markup.bold {
+  font-weight: bold;
+  color: #333;
+}
+
+.markup.raw {
+  color: #0086b3;
+}
+
+.markup.deleted, .meta.diff.header.from-file {
+  color: #bd2c00;
+  background-color: #ffecec;
+}
+
+.markup.inserted, .meta.diff.header.to-file {
+  color: #55a532;
+  background-color: #eaffea;
+}
+
+.meta.diff.range {
+  font-weight: bold;
+  color: #795da3;
+}
+
+.meta.diff.header {
+  color: #0086b3;
+}
+
+.meta.separator {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.meta.output {
+  color: #1d3e81;
 }
